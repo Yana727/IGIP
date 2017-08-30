@@ -2,28 +2,40 @@ using System;
 
 namespace IGIP
 {
-    public abstract class Soldier : IFight //abstract, bc all others will inherit, but not create a "soldier"
+    public abstract class Soldier //abstract, bc all others will inherit, but not create a "soldier"
     { //parent class for details
         public string Name { get; set; }
 
-        public int Rank { get; set; }
+        public string Rank { get; set; }
 
         public int SerialNum { get; set; }
 
-        public IFight Fightingways {get; set;} //WHY???? 
+        public IFightingways Fightingways {get; set;}  
 
-        public Soldier (IFight fighting) //WHY???
-
+        public Soldier(IFightingways fighting) //WHY???
         {
          this.Fightingways = fighting; //WHY???
         }
 
         public void Fight()
         {
-         this.Fightingways.DoDamage(); //WHY???
-         
+             this.Fightingways.DoDamage(); //WHY???
         }
-
+        // eat
+        //method : 
+        // accessModifier returnType Name(parameters)
+        public void Eat()
+        {
+           Console.WriteLine("nom nom");
+        }
+        public void Sleep()
+        {
+            Console.WriteLine("Zzzzz"); 
+        }
+        public void Walk()
+        {
+            Console.WriteLine("Stride"); 
+        }
     }
 
 }

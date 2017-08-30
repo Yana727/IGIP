@@ -8,11 +8,11 @@ namespace IGIP
     {
         static void Main(string[] args)
         {
-            var Bobby = new Airforce ("Bobby Bond", "Sgt", "123"); //why doesn't it accept the class
+            var Bobby = new Airforce ("Bobby Bond", "Sgt", 123); //why doesn't it accept the class
             Bobby.Fight(); 
-            var Wendy = new Navy ("Wendy Sammy", "Sgt", "123");
+            var Wendy = new Navy ("Wendy Sammy", "Sgt", 123);
             Wendy.Fight(); 
-            var Cindi = new Marines ("Cindy Smith", "123"); 
+            var Cindi = new Marines ("Cindy Smith", "Sgt", 123); 
             Cindi.Fight(); 
 
             var Military = new List<Soldier>(); 
@@ -20,13 +20,15 @@ namespace IGIP
             Military.Add(Bobby);
             Military.Add(Cindi); 
 
+            Military.ForEach(fighter => fighter.Fight()); //to send them all to fight 
+
             Console.WriteLine($"Airforce: {Bobby.Name}. Rank:{Bobby.Rank}. Serial number{Bobby.SerialNum}. How he fights: {Bobby.Fightingways}"); 
             Console.WriteLine($"Airforce: {Wendy.Name}. Rank:{Wendy.Rank}. Serial number{Wendy.SerialNum}. How he fights: {Wendy.Fightingways}"); 
             Console.WriteLine($"Airforce: {Cindi.Name}. Rank:{Cindi.Rank}. Serial number{Cindi.SerialNum}. How he fights: {Cindi.Fightingways}"); 
 
-            Bobby.NumBombs(); //What do these do?
-            Wendy.NumSmokes();
-            Cindi.NumBandages();
+            Bobby.Sleep(); //What do these do?
+            Wendy.Eat();
+            Cindi.Walk();
 
         }
     }
